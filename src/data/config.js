@@ -483,7 +483,7 @@ export const QUIZ = [
   },
   {
     id: 'q8',
-    question: 'When is PPE — specifically heat-resistant gloves — mandatory?',
+    question: 'Heat-resistant gloves are recommended when removing garments from the press. When should you use them?',
     options: [
       'Only when the machine is above 180 °C',
       'When handling garments immediately after pressing, and when working near a hot platen during set-up or cooling',
@@ -491,6 +491,6 @@ export const QUIZ = [
       'Only when using the Fusion IQ'
     ],
     correct: 1,
-    explanation: 'Heat-resistant gloves are mandatory when handling garments immediately after pressing, and whenever working near a hot platen during set-up or cooling — on both the TS-ONE and Fusion IQ.'
+    explanation: 'Heat-resistant gloves are strongly recommended when handling garments immediately after pressing and when working near a hot platen during set-up or cooling. They are provided at every workstation on both machines.'
   },
 ];
