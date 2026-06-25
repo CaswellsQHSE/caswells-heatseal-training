@@ -7,7 +7,7 @@ const SECONDARY = '#EC1C24';
 const ACCENT = '#53BF96';
 
 // ── Logo (base64 via URL) ─────────────────────────────────────────────────────
-const LOGO = 'https://www.caswellsgroup.com/Content/Images/CG-full-colour-logo-RGB.svg';
+const LOGO = '/logo.png';
 
 // ── Content renderers ─────────────────────────────────────────────────────────
 function ContentBlock({ block }) {

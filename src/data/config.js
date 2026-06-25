@@ -93,7 +93,7 @@ export const SECTIONS = [
       {
         type: 'callout',
         variant: 'info',
-        body: 'All PPE listed below is provided by Caswells Group free of charge. It must be worn at all times during heat seal operations.'
+        body: 'Safety footwear is mandatory at all times in the operational area. Heat-resistant gloves are strongly recommended when handling hot garments or working near a hot platen — they are provided at every workstation.'
       },
       {
         type: 'ppe-table',
@@ -105,8 +105,8 @@ export const SECTIONS = [
           },
           {
             ppe: 'Heat-resistant gloves',
-            when: 'When handling garments immediately after pressing, and when working near a hot platen during set-up or cooling',
-            mandatory: true,
+            when: 'Recommended when handling garments immediately after pressing, and when working near a hot platen during set-up or cooling',
+            mandatory: false,
           },
           {
             ppe: 'Nitrile disposable gloves',
@@ -241,7 +241,7 @@ export const SECTIONS = [
           {
             step: 6,
             title: 'Release and remove',
-            detail: 'Release the handle and allow the platen to lift FULLY before removing the garment. Use heat-resistant gloves to remove the garment from the lower bed.',
+            detail: 'Release the handle and allow the platen to lift FULLY before removing the garment. Use heat-resistant gloves (recommended) to remove the garment from the lower bed.',
           },
           {
             step: 7,
@@ -299,7 +299,7 @@ export const SECTIONS = [
           {
             step: 7,
             title: 'Remove, peel, and inspect',
-            detail: 'Using heat-resistant gloves, remove the garment from the lower bed. Peel the transfer backing in the direction specified (hot peel or cold peel). Dispose of backing paper immediately. Inspect transfer for adhesion, coverage, and alignment. Report any quality issue to your supervisor.',
+            detail: 'Using heat-resistant gloves (recommended), remove the garment from the lower bed. Peel the transfer backing in the direction specified (hot peel or cold peel). Dispose of backing paper immediately. Inspect transfer for adhesion, coverage, and alignment. Report any quality issue to your supervisor.',
           },
         ]
       }
