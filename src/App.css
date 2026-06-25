@@ -1,0 +1,4 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 0; }
+button:hover { filter: brightness(0.95); }
+input:focus { outline: 2px solid #08488D; outline-offset: 1px; }
