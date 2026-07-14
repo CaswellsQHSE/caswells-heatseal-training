@@ -244,6 +244,7 @@ function CompletionForm({ score, total }) {
     setSending(true);
     setError('');
     const completedAt = new Date().toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' });
+    const dateOnly = new Date().toISOString().slice(0, 10);
     try {
       const res = await fetch('/api/send-completion', {
         method: 'POST',
@@ -257,6 +258,15 @@ function CompletionForm({ score, total }) {
     } finally {
       setSending(false);
     }
+
+    // Structured completion record for the Refresher Matrix / Induction Tracker - not awaited
+    // into the try/catch above, never blocks "Training Complete" from showing. Site is fixed
+    // to Billingham since this app has no site selector (Embroidery & Signage is Billingham-only).
+    fetch('/api/record-training', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fullName: name.trim(), site: 'Billingham', score: `${score}/${total}`, date: dateOnly }),
+    }).catch((err) => console.error('record-training call failed:', err));
   }
 
   if (sent) {
