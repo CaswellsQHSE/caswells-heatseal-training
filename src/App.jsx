@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SECTIONS, QUIZ, MODULE_TITLE, MODULE_REF, SITE, VERSION } from './data/config';
 import './App.css';
 
@@ -238,6 +238,12 @@ function CompletionForm({ score, total }) {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
+  const [inviteToken, setInviteToken] = useState('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setInviteToken(params.get('token') || '');
+  }, []);
 
   async function handleSubmit() {
     if (!name.trim()) { setError('Please enter your full name.'); return; }
@@ -265,7 +271,7 @@ function CompletionForm({ score, total }) {
     fetch('/api/record-training', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ fullName: name.trim(), site: 'Billingham', score: `${score}/${total}`, date: dateOnly }),
+      body: JSON.stringify({ fullName: name.trim(), site: 'Billingham', score: `${score}/${total}`, date: dateOnly, inviteToken }),
     }).catch((err) => console.error('record-training call failed:', err));
   }
 

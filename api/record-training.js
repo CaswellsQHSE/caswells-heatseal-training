@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { fullName, site, score, date } = req.body;
+  const { fullName, site, score, date, inviteToken } = req.body;
   if (!fullName) {
     return res.status(400).json({ error: 'Missing fullName' });
   }
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     const flowRes = await fetch(process.env.TRAINING_COMPLETION_FLOW_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ fullName, site, score, date }),
+      body: JSON.stringify({ fullName, site, score, date, inviteToken }),
     });
     if (!flowRes.ok) {
       const text = await flowRes.text().catch(() => '');
